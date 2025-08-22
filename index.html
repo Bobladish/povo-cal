@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>povo date calculator</title>
+    </head>
+    <head>
+
+    </head>
+    <body>
+        <div class="text-content">
+            <h2>povo180日計算ツール</h2>
+            <p>最後のトッピング購入日を入力!!</p>
+        </div>
+        <div id="date_enter">  
+            <input type="date" name="date" min="2022-01-01" id="calender"><br>
+            <input type="button" value="計算" onclick="date_cal()">
+        </div>
+        <p id="result-text"></p>
+    </body>
+</html>
+<script>
+    function date_cal() { 
+        const calenderInput = document.getElementById('calender');
+        const resultElement = document.getElementById('result-text');
+
+        const selectedDateStr =calenderInput.value;
+
+        if(!selectedDateStr){
+            resultElement.textContent = '日付を選択してください'
+            return;
+        }
+        
+        const baseDate = new Date(selectedDateStr);
+        baseDate.setDate(baseDate.getDate() + 180);
+
+        const formattedDate = baseDate.toLocaleDateString();
+        resultElement.textContent = '180日後は'+ formattedDate + 'です。';
+    }   
+</script>
