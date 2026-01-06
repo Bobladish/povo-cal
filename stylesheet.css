@@ -1,12 +1,151 @@
-body {
-    margin-right: auto;
-    margin-left: auto;
-    width: 700px;
-    background-color: #f4f4f4;
+/* レイアウトの基本 */
+html {
+    height: 100%;
 }
 
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: #313131;
+    background-color: #fff;
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #313131;
+    padding: 10px 20px;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #313131;
+    font-weight: bold;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* メインコンテンツ（中央揃え） */
 main {
-    width: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* フォーム設定 */
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
     text-align: center;
-    
+}
+
+.form-exp {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-box {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ボタン */
+.button-area {
+    margin-bottom: 20px;
+}
+
+#startButton {
+    width: 150px;
+    height: 45px;
+    background: #eee;
+    color: #313131;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+    background: orange;
+    color: white;
+}
+
+/* 出力エリア */
+#outputMessage {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#result-text {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#result-text strong {
+    font-size: 1.5rem;
+    color: orange;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.copyright {
+    margin: 0;
+}
+
+/* スマホ用メディアクエリ */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    header ul li {
+        margin: 0;
+    }
 }
